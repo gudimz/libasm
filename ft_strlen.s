@@ -7,7 +7,7 @@ _ft_strlen:
 			xor rax, rax			; rax = 0 (counter)
 .loop:
 			cmp byte[rdi + rax], 0		; проверяем, в конце ли строки
-			jz .return					; if byte[rdi + rax] == 0
+			jz .return					; если в конце, возвращаем rax
 			inc rax						; rax++
 			jmp .loop
 .return:

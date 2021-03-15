@@ -1,6 +1,6 @@
 ;ssize_t	write(int fildes, const void *buf, size_t nbyte);
 
-global	_ft_read
+global	_ft_write
 extern	___error
 
 section	.text

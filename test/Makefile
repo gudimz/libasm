@@ -3,7 +3,8 @@ INCLD = -I ./includes
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror $(INCLD)
 SRCDIR = ./src/
-FILES = test_strlen.c test_strcpy.c test_strcmp.c test_strdup.c
+FILES = test_strlen.c test_strcpy.c test_strcmp.c test_strdup.c \
+		test_write.c
 SRC_FILES = $(addprefix $(SRCDIR), $(FILES))
 OBJ = $(SRC_FILES:.c=.o)
 

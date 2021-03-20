@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 00:19:38 by agigi             #+#    #+#             */
-/*   Updated: 2021/03/20 15:42:04 by agigi            ###   ########.fr       */
+/*   Updated: 2021/03/20 16:18:50 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@ static void	ft_compare(char *s1, char *s2)
 
 	lib = ft_strcmp(s1, s2);
 	orig = strcmp(s1, s2);
-	printf("ft_strcmp >> %d <<\n strcmp >> %d <<\n", lib, orig);
+	printf(" ft_strcmp >> %d <<\n strcmp    >> %d <<\n", lib, orig);
 	if (lib == orig)
-		printf("\033[32m [OK] \t\033[0m");
+		printf("\033[32m [OK] \t\033[0m\n");
 	else
-		printf("\032[32m [FAIL] \t\033[0m");
+		printf("\033[31m [FAIL] \t\033[0m\n");
 }
 
 void		ft_test_strcmp(void)
 {
-	printf("\
+	printf("\n\
 *******************************************************\n\
 *                                                     *\n\
 *                   >> ft_strcmp <<                   *\n\

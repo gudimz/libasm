@@ -1,4 +1,5 @@
 NAME = libasm.a
+T_NAME = test_libasm.a
 AS = nasm
 ASFLAGS = -f macho64
 CC = gcc
@@ -15,7 +16,7 @@ $(NAME): $(OBJ)
 		ar rcs $(NAME) $(OBJ)
 
 test: tools
-		$(CC) $(CFLAGS) -L$(TESTDIR) $(NAME)
+		$(CC) $(CFLAGS) $(TESTDIR)$(T_NAME) $(NAME) && ./a.out
 
 tools:
 		make -C $(TESTDIR)

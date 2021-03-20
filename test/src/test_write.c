@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:54:59 by agigi             #+#    #+#             */
-/*   Updated: 2021/03/20 15:44:53 by agigi            ###   ########.fr       */
+/*   Updated: 2021/03/20 16:17:37 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ static void	ft_compare_errno(int fildes, char *buf)
 	orig_errno = errno;
 	printf("orig errno =  %d : %s\n", orig_errno, strerror(lib_errno));
 	if (lib_errno == orig_errno)
-		printf("\033[32m [OK] \t\033[0m");
+		printf("\033[32m [OK] \t\033[0m\n");
 	else
-		printf("\032[32m [FAIL] \t\033[0m");
+		printf("\033[31m [FAIL] \t\033[0m\n");
 }
 
 static void	ft_compare(int fildes, char *buf)
@@ -43,15 +43,15 @@ static void	ft_compare(int fildes, char *buf)
 		lib = ft_write(fildes, &buf, strlen(buf));
 		orig = write(fildes, &buf, strlen(buf));
 		if (lib == orig)
-			printf("\033[32m [OK] \t\033[0m");
+			printf("\033[32m [OK] \t\033[0m\n");
 		else
-			printf("\032[32m [FAIL] \t\033[0m");
+			printf("\033[31m [FAIL] \t\033[0m\n");
 	}
 }
 
 void		ft_test_write(void)
 {
-	printf("\
+	printf("\n\
 *******************************************************\n\
 *                                                     *\n\
 *                   >> ft_write <<                    *\n\

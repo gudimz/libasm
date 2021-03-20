@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 00:33:27 by agigi             #+#    #+#             */
-/*   Updated: 2021/03/20 15:43:57 by agigi            ###   ########.fr       */
+/*   Updated: 2021/03/20 16:20:08 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ static void	ft_compare(char *str)
 
 	lib = ft_strdup(str);
 	orig = strdup(str);
-	printf("ft_strdup >> %s <<\n strdup >> %s <<\n", lib, orig);
+	printf(" ft_strdup >> %s <<\n strdup    >> %s <<\n", lib, orig);
 	if (!(strcmp(lib, orig)))
-		printf("\033[32m [OK] \t\033[0m");
+		printf("\033[32m [OK] \t\033[0m\n");
 	else
-		printf("\032[32m [FAIL] \t\033[0m");
+		printf("\033[31m [FAIL] \t\033[0m\n");
 	free(lib);
 	free(orig);
 }
 
 void		ft_test_strdup(void)
 {
-	printf("\
+	printf("\n\
 *******************************************************\n\
 *                                                     *\n\
 *                   >> ft_strdup <<                   *\n\

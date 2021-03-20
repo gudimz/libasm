@@ -3,7 +3,8 @@ INCLD = -I ./includes
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror $(INCLD)
 SRCDIR = ./src/
-FILES = main.c test_strlen.c test_strcpy.c test_strcmp.c test_strdup.c test_write.c
+FILES = main.c test_strlen.c test_strcpy.c test_strcmp.c test_strdup.c \
+		test_write.c test_read.c
 SRC_FILES = $(addprefix $(SRCDIR), $(FILES))
 OBJ = $(SRC_FILES:.c=.o)
 
@@ -18,4 +19,5 @@ fclean: clean
 		rm -f ${NAME}
 
 re: fclean all
+
 .PHONY: all clean fclean re

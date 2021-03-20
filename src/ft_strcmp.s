@@ -13,8 +13,8 @@ _ft_strcmp:
 			inc rcx					; rcx++
 			cmp al, dl				; al == dl?
 			jnz .end				; if (al != dl) -> return
-			cmp al, 0
-			jnz .loop
+			cmp al, 0				; al == '\0'?
+			jnz .loop				; if (al != '\0')
 .end:
 			sub rax, rdx			; return al - dl
 			ret

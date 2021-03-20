@@ -2,8 +2,6 @@ NAME = libasm.a
 T_NAME = test_libasm
 AS = nasm
 ASFLAGS = -f macho64
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
 SRCDIR = ./src/
 TESTDIR = test
 FILES = ft_strlen.s ft_read.s ft_write.s ft_strcpy.s ft_strcmp.s ft_strdup.s
@@ -28,4 +26,5 @@ fclean: clean
 		make -C ./$(TESTDIR)/ fclean
 
 re: fclean all
+
 .PHONY: all test clean fclean re

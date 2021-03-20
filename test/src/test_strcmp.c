@@ -6,13 +6,13 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 00:19:38 by agigi             #+#    #+#             */
-/*   Updated: 2021/03/19 00:26:16 by agigi            ###   ########.fr       */
+/*   Updated: 2021/03/20 15:42:04 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test_libasm.h"
 
-static void ft_compare(char *s1, char *s2)
+static void	ft_compare(char *s1, char *s2)
 {
 	int lib;
 	int orig;
@@ -26,18 +26,18 @@ static void ft_compare(char *s1, char *s2)
 		printf("\032[32m [FAIL] \t\033[0m");
 }
 
-void ft_test_strcmp(void)
+void		ft_test_strcmp(void)
 {
-		printf("\
+	printf("\
 *******************************************************\n\
 *                                                     *\n\
 *                   >> ft_strcmp <<                   *\n\
 *                                                     *\n\
 *******************************************************\n");
-ft_compare("Hello", "Hello");
-ft_compare("", "");
-ft_compare("      1", "      1");
-ft_compare("Hello", "world!");
-ft_compare("Hell", "Hello!");
-ft_compare("Hello", "world!");
+	ft_compare("Hello", "Hello");
+	ft_compare("", "");
+	ft_compare("      1", "      1");
+	ft_compare("Hello", "world!");
+	ft_compare("Hell", "Hello!");
+	ft_compare("Hello", "world!");
 }

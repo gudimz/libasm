@@ -6,13 +6,13 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 00:33:27 by agigi             #+#    #+#             */
-/*   Updated: 2021/03/19 00:40:38 by agigi            ###   ########.fr       */
+/*   Updated: 2021/03/20 15:43:57 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test_libasm.h"
 
-static void ft_compare(char *str)
+static void	ft_compare(char *str)
 {
 	char *lib;
 	char *orig;
@@ -28,16 +28,16 @@ static void ft_compare(char *str)
 	free(orig);
 }
 
-void ft_test_strdup(void)
+void		ft_test_strdup(void)
 {
-		printf("\
+	printf("\
 *******************************************************\n\
 *                                                     *\n\
 *                   >> ft_strdup <<                   *\n\
 *                                                     *\n\
 *******************************************************\n");
-ft_compare("Hello world!");
-ft_compare("");
-ft_compare("      ");
-ft_compare("Hello wo\0rld!");
+	ft_compare("Hello world!");
+	ft_compare("");
+	ft_compare("      ");
+	ft_compare("Hello wo\0rld!");
 }

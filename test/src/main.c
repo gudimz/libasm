@@ -6,13 +6,13 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 22:20:53 by agigi             #+#    #+#             */
-/*   Updated: 2021/03/19 10:57:06 by agigi            ###   ########.fr       */
+/*   Updated: 2021/03/20 15:41:22 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test_libasm.h"
 
-int main(void)
+int	main(void)
 {
 	printf("\
 {}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}\n\
@@ -20,8 +20,9 @@ int main(void)
 {}                  >> TEST LIBASM <<                 {}\n\
 {}                                                    {}\n\
 {}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}\n\n\n");
-ft_test_strcmp();
-ft_test_strlen();
-ft_test_strcpy();
-ft_test_strdup();
+	ft_test_strcmp();
+	ft_test_strlen();
+	ft_test_strcpy();
+	ft_test_strdup();
+	return (0);
 }

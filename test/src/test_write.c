@@ -6,13 +6,13 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:54:59 by agigi             #+#    #+#             */
-/*   Updated: 2021/03/19 12:20:45 by agigi            ###   ########.fr       */
+/*   Updated: 2021/03/20 15:44:53 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test_libasm.h"
 
-static void ft_compare_errno(int fildes, char *buf)
+static void	ft_compare_errno(int fildes, char *buf)
 {
 	int lib_errno;
 	int orig_errno;
@@ -31,7 +31,7 @@ static void ft_compare_errno(int fildes, char *buf)
 		printf("\032[32m [FAIL] \t\033[0m");
 }
 
-static void ft_compare(int fildes, char *buf)
+static void	ft_compare(int fildes, char *buf)
 {
 	int lib;
 	int orig;
@@ -49,17 +49,17 @@ static void ft_compare(int fildes, char *buf)
 	}
 }
 
-void ft_test_write(void)
+void		ft_test_write(void)
 {
-		printf("\
+	printf("\
 *******************************************************\n\
 *                                                     *\n\
 *                   >> ft_write <<                    *\n\
 *                                                     *\n\
 *******************************************************\n");
-ft_compare(1, "Hello");
-ft_compare(1, "");
-ft_compare(1, "      1");
-ft_compare(0, "Hello world!");
-ft_compare(60, "world!");
+	ft_compare(1, "Hello");
+	ft_compare(1, "");
+	ft_compare(1, "      1");
+	ft_compare(0, "Hello world!");
+	ft_compare(60, "world!");
 }

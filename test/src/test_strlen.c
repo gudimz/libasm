@@ -6,13 +6,13 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 22:59:12 by agigi             #+#    #+#             */
-/*   Updated: 2021/03/18 23:30:20 by agigi            ###   ########.fr       */
+/*   Updated: 2021/03/20 15:44:24 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test_libasm.h"
 
-static void ft_compare(char *str)
+static void	ft_compare(char *str)
 {
 	size_t lib;
 	size_t orig;
@@ -26,16 +26,16 @@ static void ft_compare(char *str)
 		printf("\032[32m [FAIL] \t\033[0m");
 }
 
-void ft_test_strlen(void)
+void		ft_test_strlen(void)
 {
-		printf("\
+	printf("\
 *******************************************************\n\
 *                                                     *\n\
 *                   >> ft_strlen <<                   *\n\
 *                                                     *\n\
 *******************************************************\n");
-ft_compare("Hello world!");
-ft_compare("");
-ft_compare("      ");
-ft_compare("Hello wo\0rld!");
+	ft_compare("Hello world!");
+	ft_compare("");
+	ft_compare("      ");
+	ft_compare("Hello wo\0rld!");
 }

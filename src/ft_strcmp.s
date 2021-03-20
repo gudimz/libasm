@@ -8,15 +8,13 @@ _ft_strcmp:
 			xor rdx, rdx	; rcx = 0
 			xor rcx, rcx	; rcx = 0 (counter)
 .loop:
-			cmp byte[rsi + rcx], 0	; s1[rcx] == '\0'?
-			jz .end					; if (s1[rcx] == '\0') -> return
-			cmp byte[rdi + rcx], 0	; s2[rcx] == '\0'?
-			jz .end					; if (s2[rcx] == '\0') -> return
-			mov al, byte[rsi + rcx]	; al = s1[rcx]
-			mov dl, byte[rdi + rcx]	; dl = s2[rcx]
+			mov al, byte[rdi + rcx]	; al = s1[rcx]
+			mov dl, byte[rsi + rcx]	; dl = s2[rcx]
+			inc rcx					; rcx++
 			cmp al, dl				; al == dl?
 			jnz .end				; if (al != dl) -> return
-			inc rcx					; rcx++
-			jmp .loop
+			cmp al, 0
+			jnz .loop
 .end:
 			sub rax, rdx			; return al - dl
+			ret

@@ -28,3 +28,4 @@ fclean: clean
 		make -C ./$(TESTDIR)/ fclean
 
 re: fclean all
+.PHONY: all test clean fclean re

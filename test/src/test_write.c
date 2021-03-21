@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:54:59 by agigi             #+#    #+#             */
-/*   Updated: 2021/03/20 23:18:08 by agigi            ###   ########.fr       */
+/*   Updated: 2021/03/21 13:28:47 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ static void	ft_compare_errno(int fildes, char *buf)
 	errno = 0;
 	ft_write(fildes, buf, strlen(buf));
 	lib_errno = errno;
-	printf("lib errno =   %d : %s\n", lib_errno, strerror(lib_errno));
+	printf(" lib errno =   |%d| : %s\n", lib_errno, strerror(lib_errno));
 	errno = 0;
 	write(fildes, buf, strlen(buf));
 	orig_errno = errno;
-	printf("orig errno =  %d : %s\n", orig_errno, strerror(orig_errno));
+	printf(" orig errno =  |%d| : %s\n", orig_errno, strerror(orig_errno));
 	if (lib_errno == orig_errno)
 		printf("\033[32m [OK] \t\033[0m\n");
 	else
@@ -40,10 +40,11 @@ static void	ft_compare(int fildes, char *buf)
 		ft_compare_errno(fildes, buf);
 	else
 	{
-		write(1, "ft_write = ", 11);
+		write(1, " ft_write = ", 12);
 		lib = ft_write(fildes, buf, strlen(buf));
-		write(1, "write =    ", 11);
+		write(1, " write =    ", 12);
 		orig = write(fildes, buf, strlen(buf));
+		printf(" ft_ret >> |%d| <<\n ret    >> |%d| <<\n", lib, orig);
 		if (lib == orig)
 			printf("\033[32m [OK] \t\033[0m\n");
 		else
@@ -59,9 +60,9 @@ void		ft_test_write(void)
 *                   >> ft_write <<                    *\n\
 *                                                     *\n\
 *******************************************************\n");
-	ft_compare(1, "Hello\n");
-	ft_compare(1, "\n");
-	ft_compare(1, "    !\n");
-	ft_compare(0, "Hello world!\n");
-	ft_compare(60, "world!\n");
+	ft_compare(1, "|Hello|\n");
+	ft_compare(1, "||\n");
+	ft_compare(1, "|    !|\n");
+	ft_compare(0, "|Hello world!|\n");
+	ft_compare(60, "|world!|\n");
 }

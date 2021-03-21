@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 22:39:25 by agigi             #+#    #+#             */
-/*   Updated: 2021/03/20 23:28:32 by agigi            ###   ########.fr       */
+/*   Updated: 2021/03/21 13:34:27 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ static void	ft_compare_errno(int fd_lib, int fd_orig)
 	errno = 0;
 	ft_read(fd_lib, lib_buf, -1);
 	lib_errno = errno;
-	printf("lib errno =   %d : %s\n", lib_errno, strerror(lib_errno));
+	printf(" lib errno =   |%d| : %s\n", lib_errno, strerror(lib_errno));
 	errno = 0;
 	read(fd_orig, orig_buf, -1);
 	orig_errno = errno;
-	printf("orig errno =  %d : %s\n", orig_errno, strerror(orig_errno));
+	printf(" orig errno =  |%d| : %s\n", orig_errno, strerror(orig_errno));
 	if (lib_errno == orig_errno)
 		printf("\033[32m [OK] \t\033[0m\n");
 	else
@@ -42,7 +42,8 @@ static void	ft_compare(int fd_lib, int fd_orig)
 
 	lib = ft_read(fd_lib, lib_buf, 15);
 	orig = read(fd_orig, orig_buf, 15);
-	printf(" ft_read >> %s <<\n read    >> %s <<\n", lib_buf, orig_buf);
+	printf(" ft_read >> |%s| <<\n read    >> |%s| <<\n", lib_buf, orig_buf);
+	printf(" ft_ret >> |%d| <<\n ret    >> |%d| <<\n", lib, orig);
 	if (lib == orig)
 		printf("\033[32m [OK] \t\033[0m\n");
 	else

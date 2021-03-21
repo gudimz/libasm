@@ -13,5 +13,6 @@ _ft_strcpy:
 			inc rcx					; rcx++
 			jmp	.loop
 .end:
+			mov byte[rdi + rcx], 0	; src[rcx] = '\0'
 			mov rax, rdi
 			ret

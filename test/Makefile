@@ -14,6 +14,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 		$(CC) $(CFLAGS) -o $(NAME) $(OBJ) -L.. -lasm
 include $(wildcard $(D_FILES))
+
 clean:
 		rm -f ${OBJ} $(D_FILES)
 

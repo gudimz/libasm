@@ -11,7 +11,6 @@ An assembly (or assembler) language, often abbreviated asm, is a low-level progr
 ## How to use?
 
 `make`
-***
 
 ## How to use test?
 
